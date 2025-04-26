@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduAI Hub - Generative AI Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand">EduAI Hub</a>
+  </div>
+</nav>
+
+<div class="container text-center mt-5">
+  <h1>Explore Generative AI Tools for Learning</h1>
+  <p class="text-muted">Boost your academic experience with smart, AI-powered educational tools.</p>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">AI Note Summarizer</h5>
+          <p class="card-text">Automatically summarizes long lecture notes or articles into key points.</p>
+          <a href="#" class="btn btn-primary info-btn">More Info</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Quiz Generator</h5>
+          <p class="card-text">Create MCQs or short answer quizzes from your study material.</p>
+          <a href="#" class="btn btn-primary info-btn">More Info</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Essay Writer</h5>
+          <p class="card-text">Generate academic essays with outlines, references, and citations.</p>
+          <a href="#" class="btn btn-primary info-btn">More Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalText">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 EduAI Hub. Empowering Education with Generative Intelligence.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.info-btn').click(function(e){
+      e.preventDefault();
+
+      const cardBody = $(this).closest('.card-body');
+      const title = cardBody.find('h5.card-title').text();
+      const description = cardBody.find('p.card-text').text();
+
+      $('#modalTitle').text(title);
+      $('#modalText').text(description);
+
+      const modal = new bootstrap.Modal(document.getElementById('infoModal'));
+      modal.show();
+    });
+  });
+</script>
+
+</body>
+</html>
